@@ -1,6 +1,7 @@
 #pragma once
 #include "ClipboardData.h"
 #include <array>
+#include <memory>
 /*
 This class is used as a datastructure for the clipboard, we want to ensure that there are exactly 10 items in the queue at all times
 */

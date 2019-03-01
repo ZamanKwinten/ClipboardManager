@@ -1,6 +1,6 @@
 #pragma once
-#include <optional>
-#include <array>
+
+#include <memory>
 #include <Windows.h>
 #include "ClipboardQueue.h"
 #include "ClipboardData.h"
@@ -37,7 +37,7 @@ private:
 	void sendPasteKeys();
 	std::unique_ptr<ClipboardData> getClipboardData(HWND);
 	
-	static const int WIDTH = 450;
-	static const int HEIGHT = 395;
+	static constexpr int WIDTH = 450;
+	static constexpr int HEIGHT = 395;
 };
 

@@ -13,8 +13,7 @@ ClipboardManagerUI::ClipboardManagerUI(HINSTANCE hInstance) {
 }
 
 
-ClipboardManagerUI::~ClipboardManagerUI() {
-}
+ClipboardManagerUI::~ClipboardManagerUI() = default;
 
 HWND ClipboardManagerUI::createLabel(int labelIndex) {
 	
@@ -82,7 +81,7 @@ LRESULT CALLBACK ClipboardManagerUI::wndProc(HWND hWnd, UINT message, WPARAM wPa
 void ClipboardManagerUI::handleClipboardUpdate(HWND hwnd) {
 	//pull the latest string from the clipboard
 	auto clipboardData = getClipboardData(hwnd);
-	if (clipboardData.get() != nullptr) {
+	if (clipboardData) {
 		//the clipboardData is actually pointing to something => update the queue
 		queue.add(std::move(clipboardData));
 	}
@@ -95,7 +94,7 @@ std::unique_ptr<ClipboardData> ClipboardManagerUI::getClipboardData(HWND hwnd) {
 	if (EnumClipboardFormats(CF_UNICODETEXT)) {
 		auto hData = GetClipboardData(CF_UNICODETEXT);
 		WCHAR* data = static_cast<WCHAR*>(GlobalLock(hData));
-		clipboardData = std::move(std::unique_ptr<ClipboardData>(new ClipboardData(std::wstring(data))));
+      clipboardData = std::make_unique<ClipboardData>(std::wstring{ data });
 		GlobalUnlock(hData);
 	}
 

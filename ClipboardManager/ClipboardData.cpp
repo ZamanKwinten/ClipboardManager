@@ -7,8 +7,7 @@ ClipboardData::ClipboardData(std::wstring data) {
 }
 
 
-ClipboardData::~ClipboardData() {
-}
+ClipboardData::~ClipboardData() = default;
 
 std::wstring ClipboardData::getData() {
 	return this->data;

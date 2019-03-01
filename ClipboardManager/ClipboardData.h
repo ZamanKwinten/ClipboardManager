@@ -1,5 +1,5 @@
 #pragma once
-#include<string>
+#include <string>
 
 class ClipboardData {
 public:
@@ -11,7 +11,7 @@ public:
 	*/
 	std::wstring getData();
 	/*
-	Get teh UI Representation of the data this is defined by the <UI_LENGTH> member 
+	Get the UI Representation of the data this is defined by the <UI_LENGTH> member 
 	*/
 	std::wstring getUIRepresentation();
 private:
