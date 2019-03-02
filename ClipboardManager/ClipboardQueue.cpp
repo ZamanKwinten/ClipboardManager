@@ -4,7 +4,7 @@
 
 ClipboardQueue::ClipboardQueue() {
     for (int i = 0; i < this->queue.size(); i++) {
-      queue[i] = std::make_unique<ClipboardData>(L"<empty>");
+        queue[i] = std::make_unique<ClipboardData>(L"<empty>");
     }
 }
 

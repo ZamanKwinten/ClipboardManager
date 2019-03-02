@@ -149,7 +149,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ClipboardData.h" />
-    <ClInclude Include="ClipboardManager.h" />
     <ClInclude Include="ClipboardManagerUI.h" />
     <ClInclude Include="ClipboardQueue.h" />
   </ItemGroup>
